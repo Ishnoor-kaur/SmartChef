@@ -1,0 +1,75 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Container for the recipe content */
+.recipe-container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Recipe title */
+.recipe-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Section headings */
+.recipe-container h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #34495e;
+  border-bottom: 2px solid #e67e22;
+  padding-bottom: 5px;
+}
+
+/* Ingredients list */
+.recipe-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* Instructions list */
+.recipe-container ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* List items */
+.recipe-container li {
+  margin-bottom: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .recipe-container {
+    padding: 20px;
+  }
+
+  .recipe-container h1 {
+    font-size: 24px;
+  }
+
+  .recipe-container h2 {
+    font-size: 20px;
+  }
+}

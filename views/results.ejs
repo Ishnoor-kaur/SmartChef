@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartChef - Results</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-50 min-h-screen p-6">
+  <div class="text-center mb-6">
+    <h1 class="text-3xl font-bold text-orange-600">🍽️ Your Recipes</h1>
+    <p class="text-gray-700">Based on the ingredients you provided</p>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <% recipes.forEach(recipe => { %>
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <img src="<%= recipe.thumbnail_url %>" alt="Recipe Image" class="w-full h-48 object-cover" />
+        
+        <div class="p-4">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2"><%= recipe.name %></h2>
+          <% if (recipe.description) { %>
+            <p class="text-gray-600 text-sm mb-4"><%= recipe.description %></p>
+          <% } %>
+          <a href="https://tasty.co/recipe/<%= recipe.slug %>" target="_blank" class="inline-block bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-xl transition">
+            View Recipe
+          </a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <div class="text-center mt-10">
+    <a href="/" class="text-orange-600 hover:underline">🔙 Try with different ingredients</a>
+  </div>
+</body>
+</html>
