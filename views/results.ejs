@@ -22,9 +22,10 @@
           <% if (recipe.description) { %>
             <p class="text-gray-600 text-sm mb-4"><%= recipe.description %></p>
           <% } %>
-          <a href="https://tasty.co/recipe/<%= recipe.slug %>" target="_blank" class="inline-block bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-xl transition">
-            View Recipe
-          </a>
+          <a href="/recipe/<%= recipe.slug %>" class="inline-block bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-xl transition">
+             View Recipe
+            </a>
+
         </div>
       </div>
     <% }) %>

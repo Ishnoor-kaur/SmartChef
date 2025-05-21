@@ -10,8 +10,8 @@ const https = require("https"); // Native Node module (no need to install)
 const app = express();
 
 // Set the view engine to EJS
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -30,8 +30,7 @@ app.listen(PORT, () => {
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+
 
 // Routes
 app.post("/get_recipes", async (req, res) => {
@@ -89,14 +88,14 @@ app.get("/recipe/:slug", async (req, res) => {
           instructions.push($(el).text().trim());
         });
 
-        // Optional: Use ML to clean/structure instructions here
-
         res.render("recipe", {
-          title,
-          image,
-          description,
-          ingredients,
-          instructions,
+          recipe: {
+            title,
+            image,
+            description,
+            ingredients,
+            instructions,
+          }
         });
       });
     });
@@ -107,6 +106,7 @@ app.get("/recipe/:slug", async (req, res) => {
 });
 
 
+
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
